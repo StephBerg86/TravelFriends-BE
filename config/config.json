@@ -1,0 +1,21 @@
+{
+  "development": {
+    "url": "postgres://qvyyzuon:y8KAYIw5dCgJqtxoRJTZkjVZFsLRjvIH@balarama.db.elephantsql.com:5432/qvyyzuon",
+    "dialect": "postgres",
+    "operatorsAliases": "0"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
