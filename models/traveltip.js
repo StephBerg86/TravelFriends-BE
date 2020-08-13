@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       traveltip.belongsTo(models.user);
+      traveltip.belongsTo(models.country);
     }
   }
   traveltip.init(

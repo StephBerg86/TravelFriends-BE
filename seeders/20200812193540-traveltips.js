@@ -15,7 +15,7 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
           userId: 1,
-          // countryId: 1,
+          countryId: 1,
         },
         {
           title: "Visit the golden temple",
@@ -27,7 +27,7 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
           userId: 1,
-          // countryId: 2,
+          countryId: 2,
         },
         {
           title: "Eat Feijoada in Sao Paulo",
@@ -39,7 +39,7 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
           userId: 1,
-          // countryId: 3,
+          countryId: 3,
         },
         {
           title: "Conch salad at the Bahamas",
@@ -51,7 +51,7 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
           userId: 1,
-          // countryId: 1,
+          countryId: 1,
         },
         {
           title: "Sleep in a capsule",
@@ -63,7 +63,7 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
           userId: 1,
-          // countryId: 2,
+          countryId: 2,
         },
         {
           title: "Sleep in your rooftoptent in Iceland",
@@ -75,7 +75,7 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
           userId: 1,
-          // countryId: 4,
+          countryId: 4,
         },
       ],
       {}
