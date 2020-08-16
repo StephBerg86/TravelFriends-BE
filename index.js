@@ -20,15 +20,6 @@ app.get("/", (req, res) => {
   res.send("Hi from express");
 });
 
-// POST endpoint for testing purposes, can be removed
-app.post("/echo", (req, res) => {
-  res.json({
-    youPosted: {
-      ...req.body,
-    },
-  });
-});
-
 app.use("/", authRouter);
 app.use("/", travelRouter);
 

@@ -17,6 +17,11 @@ router.get("/traveltip", async (req, res) => {
   res.status(200).send({ message: "ok", tips });
 });
 
+router.get("/countries", async (req, res) => {
+  const country = await Country.findAll();
+  res.status(200).send({ message: "ok", country });
+});
+
 router.get("/traveltip/:id", async (req, res) => {
   const { id } = req.params;
 
@@ -36,14 +41,8 @@ router.get("/traveltip/:id", async (req, res) => {
   res.status(200).send({ message: "ok", tip });
 });
 
-router.post("/:id/traveltip", async (req, res) => {
-  const country = await Country.findByPk(req.params.id);
-
-  if (country === null) {
-    return res.status(404).send({ message: "This country does not exist" });
-  }
-
-  const { title, description, category, image } = req.body;
+router.post("/traveltip", async (req, res) => {
+  const { title, description, category, countryId, image } = req.body;
 
   if (!title || !description) {
     return res
@@ -55,6 +54,7 @@ router.post("/:id/traveltip", async (req, res) => {
     title,
     description,
     category,
+    countryId,
     image,
   });
 
