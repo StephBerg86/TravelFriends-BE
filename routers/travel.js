@@ -42,7 +42,7 @@ router.get("/traveltip/:id", async (req, res) => {
 });
 
 router.post("/traveltip", async (req, res) => {
-  const { title, description, category, countryId, image } = req.body;
+  const { title, description, category, countryId, userId, image } = req.body;
 
   if (!title || !description) {
     return res
@@ -55,6 +55,7 @@ router.post("/traveltip", async (req, res) => {
     description,
     category,
     countryId,
+    userId,
     image,
   });
 

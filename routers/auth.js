@@ -33,7 +33,11 @@ router.post("/login", async (req, res, next) => {
     }
 
     delete user.dataValues["password"]; // don't send back the password hash
-    const token = toJWT({ userId: user.id });
+    const token = toJWT({
+      userId: user.id,
+      email: user.email,
+      name: user.name,
+    });
     return res.status(200).send({ token, ...user.dataValues });
   } catch (error) {
     console.log(error);
@@ -42,7 +46,7 @@ router.post("/login", async (req, res, next) => {
 });
 
 router.post("/signup", async (req, res) => {
-  const { email, name, password } = req.body;
+  const { email, name, password, image } = req.body;
   if (!email || !password || !name) {
     return res.status(400).send("Please provide an email, password and a name");
   }
@@ -52,6 +56,7 @@ router.post("/signup", async (req, res) => {
       email,
       name,
       password: bcrypt.hashSync(password, SALT_ROUNDS),
+      image,
     });
     delete newUser.dataValues["password"]; // don't send back the password hash
 
