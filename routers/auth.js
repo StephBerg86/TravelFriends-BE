@@ -9,7 +9,7 @@ const { SALT_ROUNDS } = require("../config/constants");
 
 const router = new Router();
 
-router.post("/login", async (req, res, next) => {
+router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!email || !password) {
@@ -34,9 +34,10 @@ router.post("/login", async (req, res, next) => {
 
     delete user.dataValues["password"]; // don't send back the password hash
     const token = toJWT({
-      userId: user.id,
       email: user.email,
+      id: user.id,
       name: user.name,
+      image: user.image,
     });
     return res.status(200).send({ token, ...user.dataValues });
   } catch (error) {
@@ -60,7 +61,12 @@ router.post("/signup", async (req, res) => {
     });
     delete newUser.dataValues["password"]; // don't send back the password hash
 
-    const token = toJWT({ userId: newUser.id });
+    const token = toJWT({
+      userId: newUser.id,
+      email: newUser.email,
+      image: newUser.image,
+      name: newUser.name,
+    });
     res.status(201).json({ token, ...newUser.dataValues });
   } catch (error) {
     if (error.name === "SequelizeUniqueConstraintError") {

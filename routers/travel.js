@@ -12,7 +12,7 @@ router.get("/traveltip", async (req, res) => {
   const tips = await Traveltip.findAndCountAll({
     limit,
     offset,
-    include: [Country],
+    include: [Country, User],
   });
   res.status(200).send({ message: "ok", tips });
 });
@@ -31,7 +31,7 @@ router.get("/traveltip/:id", async (req, res) => {
   }
 
   const tip = await Traveltip.findByPk(id, {
-    include: [Country],
+    include: [Country, User],
   });
 
   if (tip === null) {
@@ -42,7 +42,7 @@ router.get("/traveltip/:id", async (req, res) => {
 });
 
 router.post("/traveltip", async (req, res) => {
-  const { title, description, category, countryId, userId, image } = req.body;
+  const { title, description, category, countryId, image, userId } = req.body;
 
   if (!title || !description) {
     return res
@@ -55,8 +55,8 @@ router.post("/traveltip", async (req, res) => {
     description,
     category,
     countryId,
-    userId,
     image,
+    userId,
   });
 
   return res.status(201).send({ message: "Travel tip created", tip });

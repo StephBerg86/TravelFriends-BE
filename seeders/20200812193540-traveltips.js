@@ -15,7 +15,7 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
           userId: 1,
-          countryId: 1,
+          countryId: 3,
         },
         {
           title: "Visit the golden temple",
@@ -26,8 +26,8 @@ module.exports = {
           category: "to do",
           createdAt: new Date(),
           updatedAt: new Date(),
-          userId: 1,
-          countryId: 2,
+          userId: 2,
+          countryId: 19,
         },
         {
           title: "Eat Feijoada in Sao Paulo",
@@ -38,8 +38,8 @@ module.exports = {
           category: "to eat",
           createdAt: new Date(),
           updatedAt: new Date(),
-          userId: 1,
-          countryId: 3,
+          userId: 3,
+          countryId: 4,
         },
         {
           title: "Conch salad at the Bahamas",
@@ -51,7 +51,7 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
           userId: 1,
-          countryId: 1,
+          countryId: 3,
         },
         {
           title: "Sleep in a capsule",
@@ -62,8 +62,8 @@ module.exports = {
           category: "to stay",
           createdAt: new Date(),
           updatedAt: new Date(),
-          userId: 1,
-          countryId: 2,
+          userId: 2,
+          countryId: 19,
         },
         {
           title: "Sleep in your rooftoptent in Iceland",
@@ -74,8 +74,32 @@ module.exports = {
           category: "to stay",
           createdAt: new Date(),
           updatedAt: new Date(),
-          userId: 1,
-          countryId: 4,
+          userId: 3,
+          countryId: 17,
+        },
+        {
+          title: "Visit the most beautiful cenotes",
+          description:
+            "Yucatan is famous for it's cenotes. There are a lot and some of them are hidden. One of the most beutiful cenotes I've been to is Cenote Suytun. If you go in the morning or on a rainy day, you have the cenote to yourself.",
+          image:
+            "https://digitaltravelcouple.com/wp-content/uploads/2020/07/cenote-suytun-valladolid-1024x576.jpg",
+          category: "to do",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          userId: 3,
+          countryId: 26,
+        },
+        {
+          title: "Alma bar Isla Holbox",
+          description:
+            "The best place for a cocktail on Isla Holbox. You can enjoy an amazing view while swimming in the pool or drinking a cocktail.",
+          image:
+            "https://cdn.easy-rez.com/production/hotels/336cd3b3c89d5fe2a6db13e69e6f7358/public/.crops/alma_bar/alma_bar_12.jpg_1121x468.2147239263803_0-308.4049079754601.jpg",
+          category: "to eat",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          userId: 3,
+          countryId: 26,
         },
       ],
       {}
