@@ -77,7 +77,7 @@ router.patch("/traveltip/:id", auth, async (req, res) => {
   return res.status(200).send({ tip });
 });
 
-router.delete("/traveltip/:Id", async (req, res, next) => {
+router.delete("/traveltip/:Id", auth, async (req, res, next) => {
   try {
     const tipId = parseInt(req.params.Id);
     const tip = await Traveltip.findByPk(tipId);
